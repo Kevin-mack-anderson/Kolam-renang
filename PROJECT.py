@@ -1,5 +1,5 @@
 
-              #   Ngasih nilai awal untuk buat garis & semua insialisasi taro sini
+# Nilai awal garis & Inisialisasi
 garis_head_bottom = '=' * 75 
 judul_kolam = 'CIHUY WATERPARK'.center(len(garis_head_bottom))
 sambutan =  'SELAMAT DATANG DI KOLAM RENANG TERBESAR KE - 2 DI ASIA TENGGARA!!'
@@ -11,9 +11,9 @@ table_tengah = '1 \t Dewasa \t Rp. 45.000 \t Rp. 52.000'
 table_bawah =  '2 \t Anak-anak \t Rp. 32.000 \t Rp. 42.000'
 # Ini Inisialisasi Function 2
 ktrngn = 'No     Kategori    Harga Satuan      Jumlah      Diskon      Total'
-              #   nilai awal garis & semua insialisasi selesai
+            
 
-# Kita Buat Kumpulan List
+# Bagian List
 list_judul_kolam = [garis_head_bottom, judul_kolam]
 sambutan_peraturan_himbauan = [
                  # Ini Bagian Sambutan
@@ -32,30 +32,29 @@ list_alamat = [
          '08912345',
             'KUTABUMI KUTAJAYA PASARKEMIS KABUPATEN TANGERANG'
 ]
-# List nya Selesai
-     #Kita buat Kamus Biar Kodenya Rapih ~      
+
+# Bagian Dictionary
 dictionary_nya = {
-       #Jangan Lupa Kasih Kunci sama isi~
-         #Ini Bagian Headingnyaa       
+         #Bagian Headingnya       
             'heading' : list_judul_kolam[0],
             'nama' : list_judul_kolam[1],
-         #Ini Bagian Sambutan nyaa       
+         #Bagian Sambutannya       
             'sambutan' : sambutan_peraturan_himbauan[0],
-         #Ini Bagian Peraturannyaa       
+         # Bagian Peraturannya       
             'peraturan' : sambutan_peraturan_himbauan[1],
-         #Ini Bagian Himbauannyaa       
+         # Bagian Himbauannya       
             'himbauan' : sambutan_peraturan_himbauan[2],
-       #Ini Bagian Isi Table Harga
+         # Bagian Table Harga
             'b_atas': list_table_harga[0],
             'b_tengah': list_table_harga[1],
             'b_bawah': list_table_harga[2],
-        # Ini Punya Function 2
+         # Punya Function 2
              'keterangan' : ktrngn,
              'notlp' : list_alamat[0],
              'alamat' : list_alamat[1],
 }
-       #Kamusnya Udahan yaa... 
-# Ini Bagian Print nyaa       
+      
+# Bagian Print nya      
    #  Bagian Judul Kolam
 print(f"{dictionary_nya ['heading']} \n {dictionary_nya['nama']} \n {dictionary_nya['heading']}")
    # Bagian Sambutan dan Peraturan
@@ -84,7 +83,7 @@ def input_user ():
                    print(f'Jenis Ke - {i}')
                    ktgr = input('Masukan Kategori Pengunjung [D/A]= ').upper()
                  
-            #      Validasi Kategori
+           '''Validasi kategori'''
                    if ktgr == 'D':
                            kategori = 'Dewasa'
                            h_libur = 52000
@@ -108,7 +107,7 @@ def input_user ():
                    
                    hri_beli =   input('Masukan Hari [libur/biasa] = ').lower()
 
-                  #  Tentukan Harga Berdasarkan Hari
+           '''Tentukan Harga Berdasarkan Hari'''
                    if hri_beli == 'libur':
                             harga = h_libur
                    elif hri_beli == 'biasa':
@@ -118,15 +117,15 @@ def input_user ():
                            continue
                    voucher =  input('Voucher [y,n] = ').lower()
 
-                  #  Hitung Potongan Jika Ada Voucher
+           '''Validasi kategori'''
                    potongan = 0.10 if voucher == 'y' else 0
 
-                  # Kalkulasi
+           '''Kalkulasi'''
                    subtotal = harga * jml_beli
                    global after_discount
                    after_discount = subtotal * (1 - potongan)
-
-                  # Simpan Data
+                  
+           '''Simpan Data'''
                    penampung.append({
                           'no' : i,
                              'tipe': kategori,
@@ -183,4 +182,5 @@ if data_pesanan:
 
    
         
+
 
