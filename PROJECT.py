@@ -1,5 +1,5 @@
 
-# Nilai awal garis & Inisialisasi
+              #   Ngasih nilai awal untuk buat garis & semua insialisasi taro sini
 garis_head_bottom = '=' * 75 
 judul_kolam = 'CIHUY WATERPARK'.center(len(garis_head_bottom))
 sambutan =  'SELAMAT DATANG DI KOLAM RENANG TERBESAR KE - 2 DI ASIA TENGGARA!!'
@@ -11,9 +11,9 @@ table_tengah = '1 \t Dewasa \t Rp. 45.000 \t Rp. 52.000'
 table_bawah =  '2 \t Anak-anak \t Rp. 32.000 \t Rp. 42.000'
 # Ini Inisialisasi Function 2
 ktrngn = 'No     Kategori    Harga Satuan      Jumlah      Diskon      Total'
-            
+              #   nilai awal garis & semua insialisasi selesai
 
-# Bagian List
+# Kita Buat Kumpulan List
 list_judul_kolam = [garis_head_bottom, judul_kolam]
 sambutan_peraturan_himbauan = [
                  # Ini Bagian Sambutan
@@ -32,29 +32,30 @@ list_alamat = [
          '08912345',
             'KUTABUMI KUTAJAYA PASARKEMIS KABUPATEN TANGERANG'
 ]
-
-# Bagian Dictionary
+# List nya Selesai
+     #Kita buat Kamus Biar Kodenya Rapih ~      
 dictionary_nya = {
-         #Bagian Headingnya       
+       #Jangan Lupa Kasih Kunci sama isi~
+         #Ini Bagian Headingnyaa       
             'heading' : list_judul_kolam[0],
             'nama' : list_judul_kolam[1],
-         #Bagian Sambutannya       
+         #Ini Bagian Sambutan nyaa       
             'sambutan' : sambutan_peraturan_himbauan[0],
-         # Bagian Peraturannya       
+         #Ini Bagian Peraturannyaa       
             'peraturan' : sambutan_peraturan_himbauan[1],
-         # Bagian Himbauannya       
+         #Ini Bagian Himbauannyaa       
             'himbauan' : sambutan_peraturan_himbauan[2],
-         # Bagian Table Harga
+       #Ini Bagian Isi Table Harga
             'b_atas': list_table_harga[0],
             'b_tengah': list_table_harga[1],
             'b_bawah': list_table_harga[2],
-         # Punya Function 2
+        # Ini Punya Function 2
              'keterangan' : ktrngn,
              'notlp' : list_alamat[0],
              'alamat' : list_alamat[1],
 }
-      
-# Bagian Print nya      
+       #Kamusnya Udahan yaa... 
+# Ini Bagian Print nyaa       
    #  Bagian Judul Kolam
 print(f"{dictionary_nya ['heading']} \n {dictionary_nya['nama']} \n {dictionary_nya['heading']}")
    # Bagian Sambutan dan Peraturan
@@ -83,7 +84,7 @@ def input_user ():
                    print(f'Jenis Ke - {i}')
                    ktgr = input('Masukan Kategori Pengunjung [D/A]= ').upper()
                  
-           '''Validasi kategori'''
+            #      Validasi Kategori
                    if ktgr == 'D':
                            kategori = 'Dewasa'
                            h_libur = 52000
@@ -107,7 +108,7 @@ def input_user ():
                    
                    hri_beli =   input('Masukan Hari [libur/biasa] = ').lower()
 
-           '''Tentukan Harga Berdasarkan Hari'''
+                  #  Tentukan Harga Berdasarkan Hari
                    if hri_beli == 'libur':
                             harga = h_libur
                    elif hri_beli == 'biasa':
@@ -117,15 +118,15 @@ def input_user ():
                            continue
                    voucher =  input('Voucher [y,n] = ').lower()
 
-           '''Validasi kategori'''
+                  #  Hitung Potongan Jika Ada Voucher
                    potongan = 0.10 if voucher == 'y' else 0
 
-           '''Kalkulasi'''
+                  # Kalkulasi
                    subtotal = harga * jml_beli
                    global after_discount
                    after_discount = subtotal * (1 - potongan)
-                  
-           '''Simpan Data'''
+
+                  # Simpan Data
                    penampung.append({
                           'no' : i,
                              'tipe': kategori,
@@ -167,8 +168,8 @@ def pencetakan (data):
 def pembayaran (uang, total):
        if uang < total:
              print('NOMINAL TIDAK CUKUP!')
-       if uang >= total:
-            return print(f'Kembalian : {uang - total:,.0f} ')
+       elif uang >= total:
+             return print(f'Kembalian : {uang - total:,.0f} ')
        
 
 data_pesanan = input_user()
@@ -182,5 +183,4 @@ if data_pesanan:
 
    
         
-
 
