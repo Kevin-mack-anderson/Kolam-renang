@@ -84,7 +84,7 @@ def input_user ():
                    print(f'Jenis Ke - {i}')
                    ktgr = input('Masukan Kategori Pengunjung [D/A]= ').upper()
                  
-            #      Validasi Kategori
+                   '''Validasi Kategori'''
                    if ktgr == 'D':
                            kategori = 'Dewasa'
                            h_libur = 52000
@@ -108,7 +108,7 @@ def input_user ():
                    
                    hri_beli =   input('Masukan Hari [libur/biasa] = ').lower()
 
-                  #  Tentukan Harga Berdasarkan Hari
+                   '''Tentukan Harga dan Hari'''
                    if hri_beli == 'libur':
                             harga = h_libur
                    elif hri_beli == 'biasa':
@@ -118,15 +118,15 @@ def input_user ():
                            continue
                    voucher =  input('Voucher [y,n] = ').lower()
 
-                  #  Hitung Potongan Jika Ada Voucher
+                   '''Hitung Potongan Jika Ada Voucher'''
                    potongan = 0.10 if voucher == 'y' else 0
 
-                  # Kalkulasi
+                   '''Bagian Kalkulasi'''
                    subtotal = harga * jml_beli
                    global after_discount
                    after_discount = subtotal * (1 - potongan)
 
-                  # Simpan Data
+                   '''Simpan Data'''
                    penampung.append({
                           'no' : i,
                              'tipe': kategori,
